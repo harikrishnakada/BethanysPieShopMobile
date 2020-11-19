@@ -4,7 +4,7 @@ using BethanysPieShopMobile.Core.Model;
 
 namespace BethanysPieShopMobile.Core.Repository
 {
-    public class PieRepository
+    public static class PieRepository
     {
         private static readonly Dictionary<string, Category> AllCategories = new Dictionary<string, Category>()
         {
@@ -29,12 +29,12 @@ namespace BethanysPieShopMobile.Core.Repository
             new Pie { PieId = 11, Name = "Strawberry Cheese Cake", Price = 18.95M, ShortDescription = "You'll love it!", LongDescription = "Icing carrot cake jelly-o cheesecake. Sweet roll marzipan marshmallow toffee brownie brownie candy tootsie roll. Chocolate cake gingerbread tootsie roll oat cake pie chocolate bar cookie dragée brownie. Lollipop cotton candy cake bear claw oat cake. Dragée candy canes dessert tart. Marzipan dragée gummies lollipop jujubes chocolate bar candy canes. Icing gingerbread chupa chups cotton candy cookie sweet icing bonbon gummies. Gummies lollipop brownie biscuit danish chocolate cake. Danish powder cookie macaroon chocolate donut tart. Carrot cake dragée croissant lemon drops liquorice lemon drops cookie lollipop toffee. Carrot cake carrot cake liquorice sugar plum topping bonbon pie muffin jujubes. Jelly pastry wafer tart caramels bear claw. Tiramisu tart pie cake danish lemon drops. Brownie cupcake dragée gummies.", Category = AllCategories["Cheese cakes"], ImageUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/strawberrycheesecake.jpg", InStock = false, IsPieOfTheWeek = false, ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/strawberrycheesecakesmall.jpg" }
         };
 
-        public List<Pie> GetAllPies()
+        public static List<Pie> GetAllPies()
         {
             return AllPies;
         }
 
-        public List<Category> GetCategoriesWithPies()
+        public static List<Category> GetCategoriesWithPies()
         {
             foreach (var category in AllCategories.Values)
             {
@@ -44,7 +44,7 @@ namespace BethanysPieShopMobile.Core.Repository
             return AllCategories.Values.ToList();
         }
 
-        public Pie GetPieById(int id)
+        public static Pie GetPieById(int id)
         {
             return AllPies.FirstOrDefault(p => p.PieId == id);
         }
