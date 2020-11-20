@@ -9,7 +9,7 @@
                android:label="@string/applicationName" 
                android:roundIcon="@mipmap/ic_launcher_round" 
                android:supportsRtl="true" 
-               android:theme="@style/BethanysMonoTheme">
+               android:theme="@style/BethanysTheme">
   </application>
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 </manifest>

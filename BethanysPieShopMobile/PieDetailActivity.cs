@@ -15,7 +15,7 @@ using BethanysPieShopMobile.Utility;
 
 namespace BethanysPieShopMobile
 {
-    [Activity(Label = "PieDetailActivity", MainLauncher = true)]
+    [Activity(Label = "PieDetailActivity", MainLauncher = false)]
     public class PieDetailActivity : Activity
     {
         private Pie _selectedPie;
@@ -38,7 +38,8 @@ namespace BethanysPieShopMobile
             BindData();
         }
 
-        private void BindData() {
+        private void BindData()
+        {
             _pieNameTextView.Text = _selectedPie.Name;
             _shortDescriptionTextView.Text = _selectedPie.ShortDescription;
             _descriptionTextView.Text = _selectedPie.LongDescription;
