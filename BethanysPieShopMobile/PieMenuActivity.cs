@@ -15,7 +15,7 @@ using BethanysPieShopMobile.Core.Model;
 
 namespace BethanysPieShopMobile
 {
-    [Activity(Label = "PieMenuActivity", MainLauncher = true)]
+    [Activity(Label = "PieMenuActivity", MainLauncher = false)]
     public class PieMenuActivity : Activity
     {
         private RecyclerView _pieMenuRecyclerView;
@@ -38,7 +38,16 @@ namespace BethanysPieShopMobile
             _pieMenuRecyclerView.SetLayoutManager(_pieLayoutManager);
 
             _pieAdapter = new PieAdapter();
+            _pieAdapter.itemClick += OnPieAdapterItemClick;
             _pieMenuRecyclerView.SetAdapter(_pieAdapter);
+        }
+
+        private void OnPieAdapterItemClick(object sender, int e)
+        {
+            var intent = new Intent();
+            intent.SetClass(this, typeof(PieDetailActivity));
+            intent.PutExtra("selectedPieId", e);
+            StartActivity(intent);
         }
     }
 }

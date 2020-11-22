@@ -79,7 +79,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:id="@+id/addToCartButton"
-        android:backgroundTint="@color/colorPrimary"
+        android:backgroundTint="@color/bethanyGreen"
         android:textColor="@android:color/white"
         android:layout_marginTop="10dp"/>
 </LinearLayout>

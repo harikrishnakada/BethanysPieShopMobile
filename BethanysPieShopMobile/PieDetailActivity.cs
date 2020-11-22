@@ -7,8 +7,10 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
+using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
+using BethanysPieShopMobile.Adapters;
 using BethanysPieShopMobile.Core.Model;
 using BethanysPieShopMobile.Core.Repository;
 using BethanysPieShopMobile.Utility;
@@ -27,15 +29,31 @@ namespace BethanysPieShopMobile
         private EditText _amountEditText;
         private Button _addToCartButton;
 
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.pie_details);
             // Create your application here
-
-            _selectedPie = PieRepository.GetPieById(1);
+            var selectedPieId = Intent.Extras.GetInt("selectedPieId");
+            _selectedPie = PieRepository.GetPieById(selectedPieId);
             FindViews();
             BindData();
+            InitializeClickEvents();
+        }
+
+        private void InitializeClickEvents()
+        {
+            _addToCartButton.Click += this._addToCartButton_Click;
+        }
+
+        private void _addToCartButton_Click(object sender, EventArgs e)
+        {
+            ShoppingCartRepository.AddToShoppingCart(_selectedPie, int.Parse(this._amountEditText.Text));
+            Toast.MakeText(Application.Context, "Pie added to the cart", ToastLength.Long).Show();
+
+            //this.Finish() will remove the current activity from the stack.
+            this.Finish();
         }
 
         private void BindData()

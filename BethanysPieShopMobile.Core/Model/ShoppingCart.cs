@@ -11,10 +11,6 @@ namespace BethanysPieShopMobile.Core.Model
             CartItems = new List<ShoppingCartItem>();
         }
 
-        public List<ShoppingCartItem> CartItems
-        {
-            get;
-            set;
-        }
+        public List<ShoppingCartItem> CartItems { get; set; }
     }
 }

@@ -20,7 +20,7 @@ namespace BethanysPieShopMobile.Adapters
     public class PieAdapter : RecyclerView.Adapter
     {
         private List<Pie> _pies;
-        private EventHandler<int> itemClick;
+        public EventHandler<int> itemClick;
 
         public PieAdapter()
         {

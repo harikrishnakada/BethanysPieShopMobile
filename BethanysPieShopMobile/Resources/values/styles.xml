@@ -3,18 +3,18 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/bethanyGreen</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
    <style name="BethanysTheme" parent="android:Theme.Material.Light">
-    <item name="android:colorPrimary">@color/bethanyOrange</item>
+    <item name="android:colorPrimary">@color/bethanyGreen</item>
     <item name="android:colorAccent">@color/bethanyBeige</item>
   </style>
   
-  <!--<style name="BethanyGreenText" parent="TextAppearance.AppCompat">
-    <item name="android:textColor">#23cfa7</item>
-  </style>-->
+  <style name="BethanyGreenText" parent="TextAppearance.AppCompat">
+    <item name="android:textColor">@color/bethanyGreen</item>
+  </style>
   
 </resources>

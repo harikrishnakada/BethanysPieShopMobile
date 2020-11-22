@@ -3,26 +3,59 @@ using Android.OS;
 using Android.Support.V7.App;
 using Android.Runtime;
 using Android.Widget;
+using Android.Content;
 
 namespace BethanysPieShopMobile
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/BethanysTheme", MainLauncher = false)]
+    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
+        private Button _orderPiesButton;
+        private Button _viewCartItemsButton;
+        private Button _aboutButton;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
-            Button myButton = FindViewById<Button>(Resource.Id.button1);
-            myButton.Click += this.Button1Click;
+            FindViews();
+            InitializeEventHandlers();
         }
 
-        private void Button1Click(object sender, System.EventArgs e)
+        private void FindViews()
         {
-            throw new System.NotImplementedException();
+            _orderPiesButton = FindViewById<Button>(Resource.Id.orderPiesButton);
+            _viewCartItemsButton = FindViewById<Button>(Resource.Id.viewCartItemsButton);
+            _aboutButton = FindViewById<Button>(Resource.Id.aboutButton);
+
         }
+
+        private void InitializeEventHandlers()
+        {
+            _orderPiesButton.Click += this.onOrderPiesButtonClick;
+            _viewCartItemsButton.Click += this.onViewCartItemsButtonClick;
+            _aboutButton.Click += this._aboutButton_Click;
+        }
+
+        private void _aboutButton_Click(object sender, System.EventArgs e) {
+            Intent intent = new Intent(this, typeof(AboutActivity));
+            StartActivity(intent);
+        }
+
+        private void onOrderPiesButtonClick(object sender, System.EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(PieMenuActivity));
+            StartActivity(intent);
+        }
+
+        private void onViewCartItemsButtonClick(object sender, System.EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(CartActivity));
+            StartActivity(intent);
+        }
+
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);

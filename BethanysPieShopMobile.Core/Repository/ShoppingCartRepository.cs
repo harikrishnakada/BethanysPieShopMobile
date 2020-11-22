@@ -5,11 +5,11 @@ using System.Text;
 
 namespace BethanysPieShopMobile.Core.Repository
 {
-    public class ShoppingCartRepository
+    public static class ShoppingCartRepository
     {
         private static ShoppingCart _shoppingCart = new ShoppingCart();
 
-        public void AddToShoppingCart(Pie pie, int amount)
+        public static void AddToShoppingCart(Pie pie, int amount)
         {
             var shoppingCartItem = new ShoppingCartItem()
             {
@@ -20,7 +20,7 @@ namespace BethanysPieShopMobile.Core.Repository
             _shoppingCart.CartItems.Add(shoppingCartItem);
         }
 
-        public List<ShoppingCartItem> GetAllShoppingCartItems()
+        public static List<ShoppingCartItem> GetAllShoppingCartItems()
         {
 
             return _shoppingCart.CartItems;

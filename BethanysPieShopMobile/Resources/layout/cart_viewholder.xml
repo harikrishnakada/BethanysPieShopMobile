@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation = "horizontal"
+    android:padding="20dp">
+    <ImageView
+        android:src="@drawable/abc_ab_share_pack_mtrl_alpha"
+        android:layout_width="100dp"
+        android:layout_height="65dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
+        android:id="@+id/cartItemImageSingleView" />
+    <TextView
+        android:text="Text"
+        android:textSize="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cartItemImageTextView"
+        />
+    <TextView
+        android:text="Text"
+        android:textSize="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cartItemAmountTextView"
+        android:layout_marginLeft="20dp"
+        />
+</LinearLayout>
