@@ -13,6 +13,7 @@ namespace BethanysPieShopMobile
         private Button _orderPiesButton;
         private Button _viewCartItemsButton;
         private Button _aboutButton;
+        private Button _pieByCategoryButton;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -29,6 +30,7 @@ namespace BethanysPieShopMobile
             _orderPiesButton = FindViewById<Button>(Resource.Id.orderPiesButton);
             _viewCartItemsButton = FindViewById<Button>(Resource.Id.viewCartItemsButton);
             _aboutButton = FindViewById<Button>(Resource.Id.aboutButton);
+            _pieByCategoryButton = FindViewById<Button>(Resource.Id.pieByCategoryButton);
 
         }
 
@@ -37,6 +39,12 @@ namespace BethanysPieShopMobile
             _orderPiesButton.Click += this.onOrderPiesButtonClick;
             _viewCartItemsButton.Click += this.onViewCartItemsButtonClick;
             _aboutButton.Click += this._aboutButton_Click;
+            _pieByCategoryButton.Click += this._pieByCategoryButton_Click;
+        }
+
+        private void _pieByCategoryButton_Click(object sender, System.EventArgs e) {
+            Intent intent = new Intent(this, typeof(PieMenuWithTabsActivity));
+            StartActivity(intent);
         }
 
         private void _aboutButton_Click(object sender, System.EventArgs e) {

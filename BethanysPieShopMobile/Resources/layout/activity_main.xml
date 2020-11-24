@@ -36,4 +36,12 @@
         android:backgroundTint="@color/bethanyGreen"
         android:textColor="@android:color/white"
         android:id="@+id/aboutButton" />
+     <Button
+        android:text="View by Category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="@color/bethanyGreen"
+        android:textColor="@android:color/white"
+        android:id="@+id/pieByCategoryButton" />
 </LinearLayout>

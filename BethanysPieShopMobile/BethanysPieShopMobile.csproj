@@ -63,11 +63,14 @@
   <ItemGroup>
     <Compile Include="AboutActivity.cs" />
     <Compile Include="Adapters\CartAdapter.cs" />
+    <Compile Include="Adapters\CategoryFragmentAdapter.cs" />
     <Compile Include="Adapters\PierAdapter.cs" />
     <Compile Include="CartActivity.cs" />
+    <Compile Include="Fragments\PieCategoryFragment.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="PieDetailActivity.cs" />
     <Compile Include="PieMenuActivity.cs" />
+    <Compile Include="PieMenuWithTabsActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility\ImageHelper.cs" />
@@ -150,6 +153,16 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\about.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\pie_menu_tabs.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\pie_menu_fragment.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

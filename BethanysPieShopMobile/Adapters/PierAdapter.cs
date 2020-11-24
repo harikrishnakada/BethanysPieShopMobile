@@ -22,6 +22,11 @@ namespace BethanysPieShopMobile.Adapters
         private List<Pie> _pies;
         public EventHandler<int> itemClick;
 
+        public PieAdapter(Category category)
+        {
+            _pies = category.Pies;
+        }
+
         public PieAdapter()
         {
             _pies = PieRepository.GetAllPies();
